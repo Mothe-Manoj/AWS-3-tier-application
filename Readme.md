@@ -70,6 +70,7 @@ Because the React app runs in the user's browser, it cannot communicate with the
 2. Nginx Installation: sudo apt install nginx -y.
 3. Nginx Configuration: Located at /etc/nginx/sites-available/default
 
+
 ``` server {
     listen 80;
 
@@ -93,7 +94,9 @@ Because the React app runs in the user's browser, it cannot communicate with the
         proxy_connect_timeout 60s;
         proxy_read_timeout 60s;
     }
-} ```
+} 
+
+```
 
 
 In a 3-tier architecture, Nginx is used as a Reverse Proxy. It acts as a "Middleman" between the public internet and your private network.
