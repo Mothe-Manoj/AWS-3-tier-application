@@ -16,11 +16,11 @@ services:
     depends_on:
       - db
     environment:
-      - DB_USER=manoj
-      - DB_PASSWORD=manoj
-      - DB_NAME=tododb
-      - DB_HOST=db
-      - DB_PORT=5432
+      - DB_USER=
+      - DB_PASSWORD=
+      - DB_NAME=
+      - DB_HOST=
+      - DB_PORT=
   frontend:
     build: ./frontend-new
     ports:
