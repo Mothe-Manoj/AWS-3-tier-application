@@ -3,8 +3,8 @@ services:
     image: postgres:14-alpine
     restart: always
     environment:
-      POSTGRES_USER: manoj
-      POSTGRES_PASSWORD: manoj
+      POSTGRES_USER: [user_name]
+      POSTGRES_PASSWORD: [password]
       POSTGRES_DB: tododb
     ports:
       - "5432:5432"
@@ -16,11 +16,11 @@ services:
     depends_on:
       - db
     environment:
-      - DB_USER=
-      - DB_PASSWORD=
-      - DB_NAME=
-      - DB_HOST=
-      - DB_PORT=
+      - DB_USER= [username]
+      - DB_PASSWORD= [password]
+      - DB_NAME= [DB_name]
+      - DB_HOST= db
+      - DB_PORT= 5432
   frontend:
     build: ./frontend-new
     ports:
