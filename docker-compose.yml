@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres:14-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: manoj
+      POSTGRES_PASSWORD: manoj
+      POSTGRES_DB: tododb
+    ports:
+      - "5432:5432"
+
+  backend:
+    build: ./backend
+    ports:
+      - "5001:5001"
+    depends_on:
+      - db
+    environment:
+      - DB_USER=manoj
+      - DB_PASSWORD=manoj
+      - DB_NAME=tododb
+      - DB_HOST=db
+      - DB_PORT=5432
+  frontend:
+    build: ./frontend-new
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
